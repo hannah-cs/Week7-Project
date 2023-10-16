@@ -1,12 +1,13 @@
 package src.main;
 
 public class Member {
-    int id;
-    String name;
+    private int id;
+    private String name;
 
-    int age;
+    private int age;
+
     @Email
-    String email;
+    private String email;
 
 
     public Member(int id, String name, int age, String email) {
@@ -48,6 +49,10 @@ public class Member {
     }
 
     @ValidateUser
-    public void registerMember(Member member){
+    public void registerMember(Member member){}
+
+    @ValidateUser
+    @IsAvailable
+    public void borrowBook(Member member, Book book){}
 
 }
