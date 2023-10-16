@@ -3,10 +3,12 @@ package src.main;
 public class Member {
     int id;
     String name;
+
+    int age;
     @Email
     String email;
 
-    public Member(int id, String name, String email) {
+    public Member(int id, String name, int age, String email) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -26,6 +28,14 @@ public class Member {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 
     public String getEmail() {
