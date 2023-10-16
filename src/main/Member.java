@@ -8,6 +8,7 @@ public class Member {
     @Email
     String email;
 
+
     public Member(int id, String name, int age, String email) {
         this.id = id;
         this.name = name;
@@ -49,5 +50,4 @@ public class Member {
     @ValidateUser
     public void registerMember(Member member){
 
-    }
 }
