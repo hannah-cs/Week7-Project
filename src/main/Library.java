@@ -1,10 +1,11 @@
 package src.main;
-import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
 
 public class Library {
-    private ArrayList<Book> books;
-    private ArrayList<Book> favouriteBooks;
-    private ArrayList<Member> members;
+    private HashSet<Book> books;
+    private HashSet<Book> favouriteBooks;
+    private HashSet<Member> members;
     public void addBook(Book book){
         books.add(book);
     }
@@ -95,17 +96,18 @@ public class Library {
 
     public void displayBooks(){
         System.out.println("All books:");
-        for (int i = 0; i<books.size();i++){
-            Book book = books.get(i);
-            System.out.println(book.getBookInfo());
+        Iterator<Book> iterator = books.iterator();
+        while (iterator.hasNext()){
+            System.out.println(iterator.next().getBookInfo());
         }
     }
 
+
     public void displayFavourites(){
         System.out.println("Favourite books:");
-        for (int i = 0; i<favouriteBooks.size();i++){
-            Book book = favouriteBooks.get(i);
-            System.out.println(book.getBookInfo());
+        Iterator<Book> iterator = favouriteBooks.iterator();
+        while (iterator.hasNext()){
+            System.out.println(iterator.next().getBookInfo());
         }
     }
 }
