@@ -1,6 +1,8 @@
 package src.main;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.List;
 
 public class Library {
     private HashSet<Book> books;
@@ -41,22 +43,24 @@ public class Library {
         return null;
     }
 
-    public Book findBookByAuthor(String author) {
+    public List<Book> findBookByAuthor(String author) {
+        List<Book> result = new ArrayList<>();
         for (Book book : books) {
             if (book.getAuthor().equalsIgnoreCase(author)) {
-                return book;
+                result.add(book);
             }
         }
-        return null;
+        return result;
     }
 
-    public Book findBookByTitle(String title) {
+    public List<Book> findBookByTitle(String title) {
+        List<Book> result = new ArrayList<>();
         for (Book book : books) {
-            if (book.getTitle().equalsIgnoreCase(title)) {
-                return book;
+            if (book.getAuthor().equalsIgnoreCase(title)) {
+                result.add(book);
             }
         }
-        return null;
+        return result;
     }
 
     public void addBookToFavourites(Book book){
