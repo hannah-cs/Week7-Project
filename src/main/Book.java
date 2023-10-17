@@ -2,6 +2,10 @@ package src.main;
 
 public class Book {
     private int id;
+
+    private String author;
+
+    private String title;
     @BookInfo(title = "Title X", author = "Author X", yearPublished = 2023)
     private String bookInfo;
     @ISBN
@@ -24,6 +28,22 @@ public class Book {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getIsbn() {
