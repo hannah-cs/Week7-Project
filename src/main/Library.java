@@ -1,18 +1,21 @@
 package src.main;
-import java.util.ArrayList;
+
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.ArrayList;
 
 public class Library {
-    private HashSet<Book> books;
-    private HashSet<Book> favouriteBooks;
-    private HashSet<Member> members;
-    public void addBook(Book book){
+
+    private HashSet<Book> books = new HashSet<>();
+    private HashSet<Book> favouriteBooks = new HashSet<>();
+    private HashSet<Member> members = new HashSet<>();
+
+    public void addBook(Book book) {
         books.add(book);
     }
 
-    public void removeBook(Book book){
+    public void removeBook(Book book) {
         books.remove(book);
     }
 
@@ -63,20 +66,20 @@ public class Library {
         return result;
     }
 
-    public void addBookToFavourites(Book book){
+    public void addBookToFavourites(Book book) {
         favouriteBooks.add(book);
     }
 
-    public void removeBookFromFavourites(Book book){
+    public void removeBookFromFavourites(Book book) {
         favouriteBooks.remove(book);
     }
 
 
-    public void addMember(Member member){
+    public void addMember(Member member) {
         members.add(member);
     }
 
-    public void removeMember(Member member){
+    public void removeMember(Member member) {
         members.remove(member);
     }
 
@@ -98,19 +101,18 @@ public class Library {
         return null;
     }
 
-    public void displayBooks(){
+    public void displayBooks() {
         System.out.println("All books:");
         Iterator<Book> iterator = books.iterator();
-        while (iterator.hasNext()){
+        while (iterator.hasNext()) {
             System.out.println(iterator.next().getBookInfo());
         }
     }
 
-
-    public void displayFavourites(){
+    public void displayFavourites() {
         System.out.println("Favourite books:");
         Iterator<Book> iterator = favouriteBooks.iterator();
-        while (iterator.hasNext()){
+        while (iterator.hasNext()) {
             System.out.println(iterator.next().getBookInfo());
         }
     }

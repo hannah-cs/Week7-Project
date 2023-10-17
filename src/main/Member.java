@@ -48,6 +48,7 @@ public class Member {
     }
 
     @ValidateUser
-    public void registerMember(Member member){
+    public void registerMember(Member member) {
 
+    }
 }
