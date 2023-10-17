@@ -1,0 +1,69 @@
+Mini-Project for week 7
+Library Management System
+Overview:
+
+Day 1: Java Annotations
+Objective: Get introduced to Java Annotations by creating basic custom
+annotations for the Book and Member classes.
+Requirements:Create a Book class with fields like id, title, isbn, and author.
+Create a Member class with fields like id, name, and email.
+Tasks:
+Design a custom annotation like @ISBN to annotate the ISBN fied. This
+annotation should verify that the provided String is a valid ISBN.
+Design a custom annotation like @Email to annotate the email field. This
+annotation should verify that the provided String is a valid email.
+Optional:
+. @BookInfo
+Objective: To annotate a field that stores book-related information.
+Attributes: title, author, yearPublished
+Usage: Annotate fields in the Book class.
+2. @IsAvailable
+Objective: To annotate methods that check the availability of a book.
+Attributes: None
+Usage: Annotate methods in the Inventory class that determine if a book is
+available for checkout.
+3. @ValidateUser
+Objective: To annotate methods that need to validate user information before
+proceeding.
+
+Attributes: minimumAge, maximumBooks
+Usage: Annotate methods that allow users to register or borrow books.
+Day 2: Java Collections
+Objective: Implement functionality using Java Collections.
+Requirements:
+Create a Library class that holds collections of books and members.
+Implement methods to add, delete, and search for books and members.
+
+Day 2: Java Collections
+Objective: Implement functionality using Java Collections
+Requirements:Create a Library class that holds collections of books and
+members.
+Implement methods to add, delete, and search for books and members.
+Tasks: Use ArrayList or HashSet to store books and members in the Library
+class.
+Implement CRUD operations.
+
+Day 3: Java Streams
+Objective: Utilize Java Streams to perform operations like searching and sorting
+on the collections
+Requirements: Implement a method to search for books by title or author using
+streams.
+Implement a method to sort members by name using streams.
+Tasks: Use the stream() method to perform various operations on collections.
+
+Day 4: Data Structures - Queue
+
+Objective: Introduce Queues by implementing a book borrowing queue.
+Requirements:Create a BorrowQueue class that holds a queue of books that
+members wish to borrow.
+Implement methods to add a book to the queue and to process the queue.
+Tasks:Use LinkedList or PriorityQueue to implement the book borrowing queue.
+Implement enqueue and dequeue operations.
+
+Day 5: Data Structures - Stack
+Objective: Objective: Introduce Stacks by implementing a book return stack.
+Requirements:Create a ReturnStack class that holds a stack of books that have
+been returned.
+Implement methods to add a book to the stack and to process the stack.
+Tasks:Use Stack or Deque to implement the book return stack.
+Implement push and pop operations.
