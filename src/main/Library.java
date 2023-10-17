@@ -5,7 +5,6 @@ public class Library {
     private ArrayList<Book> books;
     private ArrayList<Book> favouriteBooks;
     private ArrayList<Member> members;
-
     public void addBook(Book book){
         books.add(book);
     }
