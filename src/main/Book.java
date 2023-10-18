@@ -5,13 +5,16 @@ public class Book {
 
     private String author;
 
+    private double price;
+
     private String title;
     @BookInfo(title = "Title X", author = "Author X", yearPublished = 2023)
     private String bookInfo;
     @ISBN
     private String isbn;
-    public Book(int id, String isbn, String title, String author, int yearPublished) {
+    public Book(int id, String isbn, String title, double price, String author, int yearPublished) {
         this.id = id;
+        this.price = price
         if (isValidISBN(isbn)) {
             this.isbn = isbn;
         } else {
@@ -28,6 +31,14 @@ public class Book {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 
     public String getAuthor() {
