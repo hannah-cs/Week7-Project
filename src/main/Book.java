@@ -7,6 +7,8 @@ public class Book {
 
     private double price;
 
+    int yearPublished;
+
     private String title;
     @BookInfo(title = "Title X", author = "Author X", yearPublished = 2023)
     private String bookInfo;
@@ -15,6 +17,9 @@ public class Book {
     public Book(int id, String isbn, String title, double price, String author, int yearPublished) {
         this.id = id;
         this.price = price;
+        this.title = title;
+        this.yearPublished = yearPublished;
+        this.author = author;
         if (isValidISBN(isbn)) {
             this.isbn = isbn;
         } else {
@@ -39,6 +44,14 @@ public class Book {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public int getYearPublished() {
+        return yearPublished;
+    }
+
+    public void setYearPublished(int yearPublished) {
+        this.yearPublished = yearPublished;
     }
 
     public String getAuthor() {
