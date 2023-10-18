@@ -56,14 +56,13 @@ public class Library {
         return result;
     }
 
-    public List<Book> findBookByTitle(String title) {
-        List<Book> result = new ArrayList<>();
+    public Book findBookByTitle(String title) {
         for (Book book : books) {
-            if (book.getAuthor().equalsIgnoreCase(title)) {
-                result.add(book);
+            if (book.getTitle().equalsIgnoreCase(title)) {
+                return book;
             }
         }
-        return result;
+        return null;
     }
 
     public void addBookToFavourites(Book book) {
