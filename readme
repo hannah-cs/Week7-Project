@@ -1,69 +1,145 @@
 Mini-Project for week 7
 Library Management System
+
 Overview:
 
-Day 1: Java Annotations
-Objective: Get introduced to Java Annotations by creating basic custom
-annotations for the Book and Member classes.
+
+
+Day 1: Java Annotations 
+Objective: Get introduced to Java Annotations by creating basic custom annotations for the Book and Member classes.
 Requirements:Create a Book class with fields like id, title, isbn, and author.
 Create a Member class with fields like id, name, and email.
+
 Tasks:
-Design a custom annotation like @ISBN to annotate the ISBN fied. This
-annotation should verify that the provided String is a valid ISBN.
-Design a custom annotation like @Email to annotate the email field. This
-annotation should verify that the provided String is a valid email.
+Design a custom annotation like @ISBN to annotate the ISBN fied. This annotation should verify that the provided String is a valid ISBN.
+Design a custom annotation like @Email to annotate the email field. This annotation should verify that the provided String is a valid email.
 Optional:
 . @BookInfo
 Objective: To annotate a field that stores book-related information.
+
 Attributes: title, author, yearPublished
 Usage: Annotate fields in the Book class.
 2. @IsAvailable
 Objective: To annotate methods that check the availability of a book.
+
 Attributes: None
-Usage: Annotate methods in the Inventory class that determine if a book is
-available for checkout.
+Usage: Annotate methods in the Inventory class that determine if a book is available for checkout.
 3. @ValidateUser
-Objective: To annotate methods that need to validate user information before
-proceeding.
+Objective: To annotate methods that need to validate user information before proceeding.
 
 Attributes: minimumAge, maximumBooks
 Usage: Annotate methods that allow users to register or borrow books.
+
 Day 2: Java Collections
 Objective: Implement functionality using Java Collections.
 Requirements:
 Create a Library class that holds collections of books and members.
 Implement methods to add, delete, and search for books and members.
 
+
 Day 2: Java Collections
 Objective: Implement functionality using Java Collections
-Requirements:Create a Library class that holds collections of books and
-members.
+Requirements:Create a Library class that holds collections of books and members.
 Implement methods to add, delete, and search for books and members.
-Tasks: Use ArrayList or HashSet to store books and members in the Library
-class.
-Implement CRUD operations.
+Tasks: 
+
+Create a class named Book with the following attributes:
+int id: An identifier for the book.
+String title: The title of the book.
+String author: The author of the book.
+
+Create a class named Library that will have the following collections:
+ArrayList<Book> books: To store a list of books.
+HashMap<Integer, Book> bookMap: To store books with their id as the key.
+HashSet<Book> favoriteBooks: To store a list of favorite books.
+
+Implement the following methods in the Library class:
+addBook(Book book): Add a book to the books collection.
+findBookById(int id): Find and return a book by its id.
+removeBook(Book book): Remove a book from the books collection.
+addBookToFavorites(Book book): Add a book to the favoriteBooks collection.
+removeBookFromFavorites(Book book): Remove a book from the favoriteBooks collection.
+Implement a method to search for books by the author's name and display the results.
+Implement a method to search for books by title and display the results.
+In the Library class, implement a method called displayBooks() that will display the details of all books in the books collection.
+In the Library class, implement a method called displayFavorites() that will display the details of all books in the favoriteBooks collection.
+
+Create a Main class with a main method to test the Library class and its functionality. You should perform the following actions:
+Create several Book objects.
+Add these books to the library using the addBook method.
+Add some books to the favoriteBooks collection.
+Display the list of books and favorite books using the displayBooks and displayFavorites methods.
+Find a book by its id using the findBookById method.
+Remove a book from the library and from the favorites list using the removeBook and removeBookFromFavorites methods.
+Search for books by author
+Search for books by title
+Display the updated lists of books and favorite books.
+
+
 
 Day 3: Java Streams
-Objective: Utilize Java Streams to perform operations like searching and sorting
-on the collections
-Requirements: Implement a method to search for books by title or author using
-streams.
+// session - 1
+
+Objective: Utilize Java Streams to perform operations like searching and sorting on the collections
+Requirements: Implement a method to search for books by title or author using streams.
 Implement a method to sort members by name using streams.
 Tasks: Use the stream() method to perform various operations on collections.
 
-Day 4: Data Structures - Queue
 
+
+
+
+// for session 2
+Objective: Create a Java program that uses Java streams to process and analyze data from a list of books.
+
+Instructions:
+
+Create a Book Class:
+
+Create a Book class with attributes like title, author, publication year, and price.
+
+Create a List of Books:
+
+Populate a list with several Book objects.
+Data Analysis with Streams:
+
+a. Find the total number of books in the list.
+
+b. Find the average price of the books.
+
+c. Find the most expensive book.
+
+d. Find the books published in the last 5 years (current year - 5).
+
+e. Create a map of authors to the list of books they have written.
+
+f. Find the author with the most books in the list.
+
+g. Find the number of books with titles starting with the letter 'A'.
+
+h. Sort the books by price in descending order and display the top 5 most expensive books.
+
+i. Group the books by the decade of their publication year (e.g., 2000-2009, 2010-2019) and count the number of books in each decade.
+
+Display the Results:
+
+Display the results of each analysis.
+
+
+
+
+Day 4: Data Structures - Queue
 Objective: Introduce Queues by implementing a book borrowing queue.
-Requirements:Create a BorrowQueue class that holds a queue of books that
-members wish to borrow.
+Requirements:Create a BorrowQueue class that holds a queue of books that members wish to borrow.
 Implement methods to add a book to the queue and to process the queue.
+
 Tasks:Use LinkedList or PriorityQueue to implement the book borrowing queue.
 Implement enqueue and dequeue operations.
 
-Day 5: Data Structures - Stack
+Day 5: Data Structures - Stack 
 Objective: Objective: Introduce Stacks by implementing a book return stack.
-Requirements:Create a ReturnStack class that holds a stack of books that have
-been returned.
+Requirements:Create a ReturnStack class that holds a stack of books that have been returned.
 Implement methods to add a book to the stack and to process the stack.
+
 Tasks:Use Stack or Deque to implement the book return stack.
 Implement push and pop operations.

@@ -50,7 +50,6 @@ public class Library {
                 .collect(Collectors.toList());
     }
 
-
     public void addBookToFavourites(Book book) {
         favouriteBooks.add(book);
     }
