@@ -14,7 +14,7 @@ public class Book {
     private String isbn;
     public Book(int id, String isbn, String title, double price, String author, int yearPublished) {
         this.id = id;
-        this.price = price
+        this.price = price;
         if (isValidISBN(isbn)) {
             this.isbn = isbn;
         } else {

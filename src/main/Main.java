@@ -3,10 +3,10 @@ package src.main;
 public class Main {
     public static void main(String[] args) {
         Library library = new Library();
-        Book book1 = new Book(1, "1111111", "Book_1","Author_1", 2020);
-        Book book2 = new Book(2, "2222222", "Book_2", "Author_2", 2021);
-        Book book3 = new Book(3, "3333333", "Book_3", "Author_3", 2022);
-        Book book4 = new Book(4, "4444444", "Book_4", "Author_4", 2023);
+        Book book1 = new Book(1, "1111111", "Book_1",10.99,"Author_1", 2020);
+        Book book2 = new Book(2, "2222222", "Book_2",10.99, "Author_2", 2021);
+        Book book3 = new Book(3, "3333333", "Book_3",10.99, "Author_3", 2022);
+        Book book4 = new Book(4, "4444444", "Book_4",10.99, "Author_4", 2023);
 
         //add book
         library.addBook(book1);
