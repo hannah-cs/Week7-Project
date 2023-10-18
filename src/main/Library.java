@@ -35,6 +35,10 @@ public class Library {
         return null;
     }
 
+    public HashSet<Book> getBooks(){
+        return books;
+    }
+
     public Book findBookByID(int id) {
         for (Book book : books) {
             if (book.getId() == (id)) {
