@@ -1,9 +1,7 @@
 package src.main;
 
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ArrayList;
+import java.util.*;
+import java.util.stream.*;
 
 public class Library {
 
@@ -46,25 +44,12 @@ public class Library {
         return null;
     }
 
-    public List<Book> findBookByAuthor(String author) {
-        List<Book> result = new ArrayList<>();
-        for (Book book : books) {
-            if (book.getAuthor().equalsIgnoreCase(author)) {
-                result.add(book);
-            }
-        }
-        return result;
+    public List<Book> searchBooksByTitleOrAuthor(String query) {
+        return books.stream()
+                .filter(book -> book.getTitle().equalsIgnoreCase(query) || book.getAuthor().equalsIgnoreCase(query))
+                .collect(Collectors.toList());
     }
 
-    public List<Book> findBookByTitle(String title) {
-        List<Book> result = new ArrayList<>();
-        for (Book book : books) {
-            if (book.getAuthor().equalsIgnoreCase(title)) {
-                result.add(book);
-            }
-        }
-        return result;
-    }
 
     public void addBookToFavourites(Book book) {
         favouriteBooks.add(book);
@@ -116,4 +101,11 @@ public class Library {
             System.out.println(iterator.next().getBookInfo());
         }
     }
+
+    public List<Member> sortMembersByName() {
+        return members.stream()
+                .sorted(Comparator.comparing(Member::getName))
+                .collect(Collectors.toList());
+    }
+
 }
