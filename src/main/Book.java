@@ -2,19 +2,22 @@ package src.main;
 
 public class Book {
     private int id;
-
-    private String author;
-
-    private double price;
-
-    private String title;
-    @BookInfo(title = "Title X", author = "Author X", yearPublished = 2023)
-    private String bookInfo;
     @ISBN
     private String isbn;
+    private String title;
+    private double price;
+    private String author;
+
+    private int yearPublished;
+
+    @BookInfo(title = "Title X", author = "Author X", yearPublished = 2023)
+    private String bookInfo;
     public Book(int id, String isbn, String title, double price, String author, int yearPublished) {
         this.id = id;
         this.price = price;
+        this.title = title;
+        this.author=author;
+        this.yearPublished=yearPublished;
         if (isValidISBN(isbn)) {
             this.isbn = isbn;
         } else {
@@ -83,5 +86,10 @@ public class Book {
     private boolean isValidISBN(String isbn) {
         //need to implement the logic
         return isbn != null && !isbn.isEmpty();
+    }
+
+    @Override
+    public String toString() {
+        return title + " by " + author;
     }
 }

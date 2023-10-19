@@ -1,6 +1,8 @@
 package src.main;
 
 import java.util.Map;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
@@ -49,6 +51,7 @@ public class Main {
         library.displayBooks();
         library.displayFavourites();
 
-//        f. Find the author with the most books in the list.
+        String authorWithMostBooks = library.findAuthorWithMostBooks();
+        System.out.println("Author with the most books in the list: " + authorWithMostBooks);
     }
 }
