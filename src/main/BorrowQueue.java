@@ -3,7 +3,7 @@ package src.main;
 import java.util.*;
 
 public class BorrowQueue {
-    List<Book> borrowQueue = new ArrayList<>();
+    LinkedList<Book> borrowQueue = new LinkedList<>();
     private int queueLength = 5;
     int front = -1;
     int back = -1;
