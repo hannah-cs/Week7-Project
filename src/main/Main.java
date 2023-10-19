@@ -40,5 +40,16 @@ public class Main {
         //display after removing
         library.displayBooks();
         library.displayFavourites();
+
+        //queue tasks
+        System.out.println("Queue tasks:");
+        BorrowQueue borrowQueue = new BorrowQueue();
+        borrowQueue.enqueue(book1);
+        borrowQueue.enqueue(book3);
+        borrowQueue.enqueue(book4);
+        borrowQueue.displayBorrowQueue();
+        borrowQueue.peekBorrowQueue();
+        borrowQueue.dequeue();
+        borrowQueue.displayBorrowQueue();
     }
 }
