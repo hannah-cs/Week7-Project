@@ -51,7 +51,25 @@ public class Main {
         library.displayBooks();
         library.displayFavourites();
 
+        //streams - f to i
         String authorWithMostBooks = library.findAuthorWithMostBooks();
         System.out.println("Author with the most books in the list: " + authorWithMostBooks);
+
+        //queue
+        BorrowQueue borrowQueue = new BorrowQueue();
+
+        borrowQueue.enqueue(book1);
+        borrowQueue.enqueue(book2);
+        borrowQueue.enqueue(book3);
+        borrowQueue.enqueue(book4);
+
+        borrowQueue.displayBorrowQueue();
+
+        borrowQueue.dequeue();
+        borrowQueue.dequeue();
+
+        borrowQueue.displayBorrowQueue();
+
+        borrowQueue.peekBorrowQueue();
     }
 }
