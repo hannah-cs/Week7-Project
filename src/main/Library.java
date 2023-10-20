@@ -36,7 +36,7 @@ public class Library {
     }
 
     public HashSet<Book> getBooks(){
-        return books;
+        return this.books;
     }
 
     public Book findBookByID(int id) {
