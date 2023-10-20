@@ -34,9 +34,8 @@ public class Library {
         }
         return null;
     }
-
-    public HashSet<Book> getBooks(){
-        return this.books;
+    public HashSet<Book> getBooks() {
+        return books;
     }
 
     public Book findBookByID(int id) {
@@ -111,4 +110,16 @@ public class Library {
                 .collect(Collectors.toList());
     }
 
+    //    f. Find the author with the most books in the list.
+    public String findAuthorWithMostBooks() {
+        Map<String, Long> authorBookCounts = books.stream()
+                .filter(book -> book.getAuthor() != null) // Filter out books with null authors
+                .map(Book::getAuthor)
+                .collect(Collectors.groupingBy(author -> author, Collectors.counting()));
+
+        Optional<Map.Entry<String, Long>> maxEntry = authorBookCounts.entrySet().stream()
+                .max(Map.Entry.comparingByValue());
+
+        return maxEntry.map(Map.Entry::getKey).orElse("No authors found");
+    }
 }

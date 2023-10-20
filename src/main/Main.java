@@ -3,6 +3,8 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 import java.util.Map;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
@@ -52,6 +54,9 @@ public class Main {
         library.displayBooks();
         library.displayFavourites();
 
+        String authorWithMostBooks = library.findAuthorWithMostBooks();
+        System.out.println("Author with the most books in the list: " + authorWithMostBooks);
+
         //a. Find the total number of books in the list.
         long totalBooks = library.getBooks().stream().count();
         System.out.println("Total number of books: "+totalBooks);
@@ -82,5 +87,6 @@ public class Main {
             System.out.println("Author: " + author);
             books.forEach(book -> System.out.println("  Book Title: " + book.getTitle()));
         });
+
     }
 }
