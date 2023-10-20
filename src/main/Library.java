@@ -34,7 +34,6 @@ public class Library {
         }
         return null;
     }
-
     public HashSet<Book> getBooks() {
         return books;
     }

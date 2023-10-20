@@ -1,4 +1,6 @@
 package src.main;
+import java.util.*;
+import java.util.stream.Collectors;
 
 import java.util.Map;
 import java.util.Optional;
@@ -7,8 +9,9 @@ import java.util.stream.Collectors;
 public class Main {
     public static void main(String[] args) {
         Library library = new Library();
+
         Book book1 = new Book(1, "1111111", "Book_1", 10.99, "Author_1", 2020);
-        Book book2 = new Book(2, "2222222", "Book_2", 10.99, "Author_2", 2021);
+        Book book2 = new Book(2, "2222222", "Book_2", 11.99, "Author_2", 2021);
         Book book3 = new Book(3, "3333333", "Book_3", 10.99, "Author_3", 2022);
         Book book4 = new Book(4, "4444444", "Book_4", 10.99, "Author_4", 2023);
         Book book5 = new Book(5, "5555555", "Book_5", 10.99, "Author_1", 1900);
@@ -53,5 +56,37 @@ public class Main {
 
         String authorWithMostBooks = library.findAuthorWithMostBooks();
         System.out.println("Author with the most books in the list: " + authorWithMostBooks);
+
+        //a. Find the total number of books in the list.
+        long totalBooks = library.getBooks().stream().count();
+        System.out.println("Total number of books: "+totalBooks);
+
+        //b. Find the average price of the books.
+        double avg = library.getBooks().stream()
+                .mapToDouble(Book::getPrice)
+                .average()
+                .orElse(0.0);
+        System.out.println("Average price of all books: "+avg);
+
+        //c. Find the most expensive book.
+        Book mostExpensive = library.getBooks().stream()
+                .reduce((a,b)->a.getPrice()>b.getPrice()?a:b)
+                .orElse(null);
+        System.out.println("Most expensive book: "+mostExpensive.getTitle());
+
+        //d. Find the books published in the last 5 years (current year - 5).
+        List<Book> last5Years = library.getBooks().stream()
+                .filter(book -> book.getYearPublished() >= (2023 - 5))
+                .collect(Collectors.toList());
+        System.out.println("Books published in the last 5 years: " + last5Years);
+
+        //e. Create a map of authors to the list of books they have written.
+        Map<String, List<Book>> authorToBooks = library.getBooks().stream()
+                .collect(Collectors.groupingBy(Book::getAuthor));
+        authorToBooks.forEach((author, books) -> {
+            System.out.println("Author: " + author);
+            books.forEach(book -> System.out.println("  Book Title: " + book.getTitle()));
+        });
+
     }
 }
